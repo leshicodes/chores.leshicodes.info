@@ -1,6 +1,6 @@
 services:
   vikunja:
-    image: vikunja/vikunja:1.0.0-rc2
+    image: vikunja/vikunja:${VIKUNJA_CONTAINER_TAG}
     hostname: vikunja
     container_name: vikunja
     env_file:
@@ -17,7 +17,7 @@ services:
   db:
     container_name: ${VIKUNJA_DATABASE_HOST}
     hostname: ${VIKUNJA_DATABASE_HOST}
-    image: postgres:18
+    image: postgres:${POSTGRES_CONTAINER_TAG}
     env_file:
       - .env
       - .env.secrets
