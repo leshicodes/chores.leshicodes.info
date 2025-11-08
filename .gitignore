@@ -2,3 +2,7 @@
 db/
 files/
 tasks/
+venv/
+planka/planka_automations/.env
+donetick/config/selfhosted.yml
+donetick/data/

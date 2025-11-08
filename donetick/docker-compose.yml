@@ -1,14 +1,28 @@
 services:
+  postgres:
+    image: postgres:${POSTGRES_IMAGE_TAG}
+    container_name: donetick-postgres
+    hostname: donetick-postgres
+    restart: unless-stopped
+    env_file:
+      - .env.secrets
+      - .env
+    volumes:
+      - ./data:/var/lib/postgresql/data
+
   donetick:
-    image: donetick/donetick
+    image: donetick/donetick:${DT_IMAGE_TAG}
     container_name: donetick
+    hostname: donetick
     restart: unless-stopped
     ports:
       - 2021:2021
     volumes:
-      - ./data:/donetick-data
+      # - ./data:/donetick-data
       - ./config:/config
-    environment:
-      - DT_ENV=selfhosted
-      - DT_SQLITE_PATH=/donetick-data/donetick.db
-      
+    env_file:
+      - .env.secrets
+      - .env
+
+volumes:
+  postgres_data:
