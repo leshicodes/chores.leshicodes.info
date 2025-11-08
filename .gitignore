@@ -4,5 +4,5 @@ files/
 tasks/
 venv/
 planka/planka_automations/.env
-donetick/config/selfhosted.yml
-donetick/data/
+config/selfhosted.yml
+data/

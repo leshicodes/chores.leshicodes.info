@@ -1,50 +1,35 @@
-# Chores - Task Management Evaluation
+# Chores - Task Management with Donetick
 
-A collection of Docker Compose setups for evaluating different self-hosted task management applications.
+A self-hosted task management solution using **Donetick** - a modern, collaborative chore and task tracking application.
 
-## 🚧 Work in Progress
+## 🎯 Solution Chosen: Donetick
 
-This is a **multi-app evaluation project** where I'm testing various open-source task management solutions to find the best fit. Each application has its own folder with dedicated configuration.
+After evaluating various self-hosted task management options, **Donetick** was selected for its:
+- Clean, modern interface
+- Collaborative features for household/team task management  
+- Docker-based deployment
+- Active development and community
 
-## Project Structure
+## Quick Start
 
+```bash
+cp .env.secrets.example .env.secrets
+# Edit .env.secrets with your configuration
+docker-compose up -d
 ```
-chores.leshicodes.info/
-├── <app-name>/           # Each app gets its own directory
-│   ├── docker-compose.yml
-│   ├── .env
-│   ├── .env.secrets
-│   └── data/             # App-specific data storage
-└── README.md
-```
 
-## Getting Started
+## Features
 
-1. Navigate to any application directory
-2. Copy the example secrets file: `cp .env.secrets.example .env.secrets`
-3. Edit `.env.secrets` with your configuration
-4. Start the application: `docker-compose up -d`
-
-Each application runs on its own port to avoid conflicts. Check the individual `.env` files for specific port assignments.
+- Task creation and assignment
+- Recurring chore scheduling
+- Progress tracking
+- Multi-user collaboration
+- Mobile-friendly interface
 
 ## Configuration
 
-Each application maintains its own:
-- Environment configuration (`.env` and `.env.secrets`)
-- Docker Compose setup  
-- Data persistence and volumes
-- Unique port allocation
-
-## Evaluation Goals
-
-- Compare features, usability, and performance
-- Test setup complexity and maintenance requirements
-- Evaluate mobile compatibility and API availability
-- Assess backup/export capabilities
-- Document pros and cons of each solution
-
-## Security Notes
-
-- Each app uses isolated `.env.secrets` files for sensitive data
-- Generate unique passwords and secrets for each application
-- All secrets are excluded from version control via `.gitignore`
+The setup includes:
+- PostgreSQL database for data persistence
+- Custom configuration via `config/selfhosted.yml`
+- Environment-based secrets management
+- Persistent data storage in `donetick/data/`
