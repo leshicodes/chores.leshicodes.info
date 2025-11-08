@@ -12,7 +12,7 @@ database:
   host: "donetick-postgres"
   port: 5432
   user: "donetick"
-  password: "0YYvi4raGlB6yfW5!"
+  password: "changeme" # Change this!
   name: "donetick"
 jwt:
   secret: "f04c0f8bf321ecca14c4e7de6a701774" # Change this! this was a random thing I generated.
