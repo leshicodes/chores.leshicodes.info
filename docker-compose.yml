@@ -8,7 +8,7 @@ services:
       - .env.secrets
       - .env
     volumes:
-      - ./data:/var/lib/postgresql/data
+      - /data/container-configs/donetick/db:/var/lib/postgresql/data
 
   donetick:
     image: donetick/donetick:${DT_IMAGE_TAG}
@@ -19,7 +19,7 @@ services:
       - 2021:2021
     volumes:
       # - ./data:/donetick-data
-      - ./config:/config
+      - /data/container-configs/donetick/config:/config
     env_file:
       - .env.secrets
       - .env
