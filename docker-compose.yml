@@ -23,14 +23,17 @@ services:
     env_file:
       - .env.secrets
       - .env
+    depends_on:
+      - postgres
 
-services:
   newt:
     image: fosrl/newt
     container_name: newt
     restart: unless-stopped
     env_file:
       - .env.secrets
+    depends_on:
+      - donetick
 
 volumes:
   postgres_data:
